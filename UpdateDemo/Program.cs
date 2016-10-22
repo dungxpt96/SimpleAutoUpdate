@@ -1,15 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace UpdateDemo
+namespace RedCell.Diagnostics.Update.Demo
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        static void Main()
         {
+            Log.Console = true;
+            Console.WriteLine("You are running version 1 of this console application.");
+            var updater = new Updater();
+            updater.StartMonitoring();
+            Console.ReadKey();
         }
     }
 }
